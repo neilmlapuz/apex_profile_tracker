@@ -4,8 +4,8 @@ const express = require('express'),
 dotenv.config({ path: './config.env' })
 
 
+app.use(express.static(__dirname + '/public'));
 app.use('/', require('./routes/index'))
-
 app.use('/api/v1/profile', require('./routes/profile'))
 
 
