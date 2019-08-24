@@ -12,8 +12,13 @@ app.use(bodyParser.json()) // for parsing application/json
 
 
 app.use('/', require('./routes/index'))
+
+
 app.post('/handler', function (req, res) {
-    console.log(req.body.gamertag)
+    console.log(">>>.SD")
+    // res.send(`/api/v1/profile/${req.body.platform}/${req.body.gamertag}`)
+    // app.use(`/api/v1/profile/${req.body.platform}/${req.body.gamertag}`, require('./routes/profile'))
+    // console.log(req.body.gamertag)
 })
 
 // app.use('/api/v1/profile', require('./routes/profile'))
