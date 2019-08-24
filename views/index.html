@@ -24,6 +24,27 @@
     </div>
 
     <script>
+        const ajax_post = (url, data, type, progress) => {
+            const xhr = new XMLHttpRequest()
+            xhr.open('POST', url, true)
+            //JSON PAYLOAD
+            xhr.setRequestHeader("Content-type", "application/json");
+            xhr.responseType = type ? type : 'json' //arraybuffer, application/json plain/text
+            // xhr.onreadystatechange = () => {
+            //     if (xhr.readyState == 4 && xhr.status == 200) {
+            //         console.log(">>>>>>>>", xhr.response)
+            //         callback(xhr.response)
+
+            //     }
+
+            // }
+            if (progress)
+                xhr.onprogress = progress // e.loaded the bytes the browser received
+
+            xhr.send(data)
+        }
+
+
         const $ = id => document.getElementById(id),
             submitBtn = $("submitBtn"),
             platform = $("platformInput"),
@@ -31,8 +52,12 @@
 
 
         submitBtn.addEventListener('click', () => {
-            // console.log(gamerTag.value, platform.value)
-            // return res.redirect('../routes/profile.js')
+            const data = {
+                'gamertag': gamerTag.value,
+                'platform': platform.value
+            }
+            const jsonSt = JSON.stringify(data)
+            ajax_post('/handler', jsonSt)
         })
     </script>
 </body>
