@@ -57,8 +57,10 @@
                 'gamertag': gamerTag.value,
                 'platform': platform.value
             }
-            const jsonSt = JSON.stringify(data)
-            ajax_post('/', jsonSt)
+            window.location = `/profile/${data.platform}/${data.gamertag}`
+
+            // const jsonSt = JSON.stringify(data)
+            // ajax_post('/', jsonSt)
         })
     </script>
 </body>

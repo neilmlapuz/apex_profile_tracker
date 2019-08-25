@@ -17,16 +17,11 @@ app.get('/', function (req, res) {
 })
 
 
-app.post('/', function (req, res) {
+// app.post('/', function (req, res) {
+//     app.use('/profile', require('./routes/profile'))
+// })
 
-    app.use('/profile', require('./routes/profile'))
-    console.log("dkfms")
-    res.redirect(`/profile/${req.body.platform}/${req.body.gamertag}`)
-
-    
-})
-
-// app.use('/profile', require('./routes/profile'))
+app.use('/profile', require('./routes/profile'))
 
 
 
