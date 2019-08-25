@@ -18,12 +18,12 @@ app.get('/', function (req, res) {
 
 
 app.post('/', function (req, res) {
-    console.log(">>>.SD", req.body.platform)
-    // res.send(`/api/v1/profile/${req.body.platform}/${req.body.gamertag}`)
-    // res.send(req.body)
-    return res.redirect('/profile')
-    // app.use(profile/${req.body.platform}/${req.body.gamertag}`, require('./routes/profile'))
-    // console.log(req.body.gamertag)
+
+    app.use('/profile', require('./routes/profile'))
+    console.log("dkfms")
+    res.redirect(`/profile/${req.body.platform}/${req.body.gamertag}`)
+
+    
 })
 
 // app.use('/profile', require('./routes/profile'))

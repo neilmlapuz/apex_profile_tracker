@@ -16,7 +16,8 @@ router.get('/:platform/:gamertag', async (req, res) => {
         const data = await response.json()
 
         //response to the client
-        res.json(data)
+        console.log(data)
+        res.send(data)
     }
     catch (err) {
         console.log(err)
