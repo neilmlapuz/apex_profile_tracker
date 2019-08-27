@@ -1,0 +1,46 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  link(rel='stylesheet' type='text/css' href='/styles/style.css')
+  title Document
+.container
+  .form-container.user-container
+    h1 Track Stats
+    select#platformInput
+      option(value='psn') Playstation
+      option(value='xbl') Xbox
+      option(value='origin') PC
+    input#gamerTagInput(type='text' placeholder='Gamertag' value='ShamR0cks978')
+    button#submitBtn Submit
+script.
+  // const ajax_post = (url, data, type, progress) => {
+  //     const xhr = new XMLHttpRequest()
+  //     xhr.open('POST', url, true)
+  //     //JSON PAYLOAD
+  //     xhr.setRequestHeader("Content-type", "application/json");
+  //     xhr.responseType = type ? type : 'json' //arraybuffer, application/json plain/text
+  //     xhr.onreadystatechange = () => {
+  //         if (xhr.readyState == 4 && xhr.status == 200) {
+  //             console.log(">>>>>>>>", xhr.response)
+  //             callback(xhr.response)
+  //         }
+  //     }
+  //     if (progress)
+  //         xhr.onprogress = progress // e.loaded the bytes the browser received
+  //     xhr.send(data)
+  // }
+  const $ = id => document.getElementById(id),
+  submitBtn = $("submitBtn"),
+  platform = $("platformInput"),
+  gamerTag = $("gamerTagInput")
+  submitBtn.addEventListener('click', () => {
+  const data = {
+  'gamertag': gamerTag.value,
+  'platform': platform.value
+  }
+  window.location = `/profile/${data.platform}/${data.gamertag}`
+  // const jsonSt = JSON.stringify(data)
+  // ajax_post('/', jsonSt)
+  })

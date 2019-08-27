@@ -24,26 +24,26 @@
     </div>
 
     <script>
-        const ajax_post = (url, data, type, progress) => {
+        // const ajax_post = (url, data, type, progress) => {
 
-            const xhr = new XMLHttpRequest()
-            xhr.open('POST', url, true)
-            //JSON PAYLOAD
-            xhr.setRequestHeader("Content-type", "application/json");
-            xhr.responseType = type ? type : 'json' //arraybuffer, application/json plain/text
-            // xhr.onreadystatechange = () => {
-            //     if (xhr.readyState == 4 && xhr.status == 200) {
-            //         console.log(">>>>>>>>", xhr.response)
-            //         callback(xhr.response)
+        //     const xhr = new XMLHttpRequest()
+        //     xhr.open('POST', url, true)
+        //     //JSON PAYLOAD
+        //     xhr.setRequestHeader("Content-type", "application/json");
+        //     xhr.responseType = type ? type : 'json' //arraybuffer, application/json plain/text
+        //     xhr.onreadystatechange = () => {
+        //         if (xhr.readyState == 4 && xhr.status == 200) {
+        //             console.log(">>>>>>>>", xhr.response)
+        //             callback(xhr.response)
 
-            //     }
+        //         }
 
-            // }
-            if (progress)
-                xhr.onprogress = progress // e.loaded the bytes the browser received
+        //     }
+        //     if (progress)
+        //         xhr.onprogress = progress // e.loaded the bytes the browser received
 
-            xhr.send(data)
-        }
+        //     xhr.send(data)
+        // }
 
 
         const $ = id => document.getElementById(id),

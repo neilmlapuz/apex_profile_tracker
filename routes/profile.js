@@ -1,6 +1,8 @@
 const express = require('express'),
     router = express.Router(),
-    fetch = require('node-fetch')
+    fetch = require('node-fetch'),
+    path = require('path')
+
 
 router.get('/:platform/:gamertag', async (req, res) => {
     try {
@@ -18,6 +20,7 @@ router.get('/:platform/:gamertag', async (req, res) => {
         //response to the client
         console.log(data)
         res.send(data)
+        res.sendFile(path.join(__dirname, '..', 'views', 'profile.html'), { data })
     }
     catch (err) {
         console.log(err)
