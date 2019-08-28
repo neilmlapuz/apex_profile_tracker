@@ -6,3 +6,38 @@ head
   link(rel='stylesheet' type='text/css' href='/styles/style.css')
   title Document
 .container
+    .user-container
+        .userProfile
+            img(src=`https://avatar-cdn.tracker.gg/api/avatar/2/ShamR0cks978.png` width="47" height = "47")
+            h1 #{data.platformInfo.platformUserId} 
+                span (lvl #{data.segments[0].stats.level.displayValue})
+
+        .grid
+            div
+                img(src='https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/legends-character-tiles/apex-grid-tile-legends-pathfinder.png.adapt.crop16x9.png' width="250" height = "250")
+            div
+                ul
+                    li 
+                        h4 Selected Legend
+                        p #{data.metadata.activeLegendName}
+                    li 
+                        h4 Season 2 Wins
+                        p #{data.segments[0].stats.season2Wins.displayValue} 
+                            span (#{data.segments[0].stats.season2Wins.percentile})
+            div
+                ul
+                    li
+                        h4 Lifetime Kills
+                        p #{data.segments[0].stats.kills.displayValue} 
+                            span (#{data.segments[0].stats.kills.percentile}%)
+
+                    li 
+                        h4 Damage Done
+                        p #{data.segments[0].stats.damage.displayValue} 
+                            span (#{data.segments[0].stats.damage.percentile}%)
+
+        
+
+script.
+    console.log(`#{data.platformInfo.avatarUrl}`)
+    console.log(`#{data.segments[1].metadata.imageUrl}`)

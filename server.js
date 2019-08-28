@@ -17,10 +17,6 @@ app.get('/', function (req, res) {
 })
 
 
-// app.post('/', function (req, res) {
-//     app.use('/profile', require('./routes/profile'))
-// })
-
 app.use('/profile', require('./routes/profile'))
 
 
