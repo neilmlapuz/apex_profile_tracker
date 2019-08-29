@@ -3,12 +3,14 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=#, initial-scale=1.0')
   meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet' type='text/css' href='/styles/style.css')
   title Document
 .container
     .user-container
         .userProfile
-            img(src=`https://avatar-cdn.tracker.gg/api/avatar/2/ShamR0cks978.png` width="47" height = "47")
+            //- var img = #{data.platformInfo.avatarUrl}
+            img(src='https://avatar-cdn.tracker.gg/api/avatar/2/ShamR0cks978.png' width="47" height = "47")
             h1 #{data.platformInfo.platformUserId} 
                 span (lvl #{data.segments[0].stats.level.displayValue})
 
