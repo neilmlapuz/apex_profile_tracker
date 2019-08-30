@@ -91,6 +91,11 @@ button:focus{
 .grid{
     display:flex;
 }
+.itemContainer button{
+    margin: 0 0 1rem 1rem;
+    background: rgba(255, 255, 255, 0.8);
+}
+
 ul{
     list-style:none;
 }

@@ -7,33 +7,47 @@ head
   link(rel='stylesheet' type='text/css' href='/styles/style.css')
   title Document
 .container
-    .user-container
-        .userProfile
-            //- var img = #{data.platformInfo.avatarUrl}
-            img(src=data.platformInfo.avatarUrl width="47" height = "47")
-            h1 #{data.platformInfo.platformUserId} 
-                span (lvl #{data.segments[0].stats.level.displayValue})
+    .itemContainer
+        .user-container
+            .userProfile
+                //- var img = #{data.platformInfo.avatarUrl}
+                img(src=data.platformInfo.avatarUrl width="47" height = "47")
+                h1 #{data.platformInfo.platformUserId} 
+                    span (lvl #{data.segments[0].stats.level.displayValue})
 
-        .grid
-            div
-                img(src=data.segments[1].metadata.imageUrl width="250" height = "250")
-            div
-                ul
-                    li 
-                        h4 Selected Legend
-                        p #{data.metadata.activeLegendName}
-                    li 
-                        h4 Season 2 Wins
-                        p #{data.segments[0].stats.season2Wins.displayValue} 
-                            span (#{data.segments[0].stats.season2Wins.percentile})
-            div
-                ul
-                    li
-                        h4 Lifetime Kills
-                        p #{data.segments[0].stats.kills.displayValue} 
-                            span (#{data.segments[0].stats.kills.percentile}%)
+            .grid
+                div
+                    img(src=data.segments[1].metadata.imageUrl width="250" height = "250")
+                div
+                    ul
+                        li 
+                            h4 Selected Legend
+                            p #{data.metadata.activeLegendName}
+                        li 
+                            h4 Season 2 Wins
+                            p #{data.segments[0].stats.season2Wins.displayValue} 
+                                span (#{data.segments[0].stats.season2Wins.percentile})
+                div
+                    ul
+                        li
+                            h4 Lifetime Kills
+                            p #{data.segments[0].stats.kills.displayValue} 
+                                span (#{data.segments[0].stats.kills.percentile}%)
 
-                    li 
-                        h4 Damage Done
-                        p #{data.segments[0].stats.damage.displayValue} 
-                            span (#{data.segments[0].stats.damage.percentile}%)
+                        li 
+                            h4 Damage Done
+                            p #{data.segments[0].stats.damage.displayValue} 
+                                span (#{data.segments[0].stats.damage.percentile}%)
+
+        <button type="button" id="backBtn">Go Back</button>
+
+script.
+
+    document.getElementById("backBtn").addEventListener('click',() => {
+        window.location='/'
+    })
+
+
+
+
+        
